@@ -1,19 +1,16 @@
-Feature: 用于测试通用数据存储接口
+Feature: 用于测试两数相加
 
   Background:
     Given 初始化appium
 
-  Scenario Outline: 测试通用数据接口
-    Given 设置节点路径为"<Name>"
+  Scenario Outline: 测试两数相加
+    Given 设置数字1为"<Number1>"
     Given 隐藏键盘
-    Given 选择节点操作为"<Opt>"
-    Given 选择节点类型为"<Type>"
-    Given 设置节点值为"<Value>"
+    Given 设置数字2为"<Number2>"
     Given 隐藏键盘
-    When 执行接口
-    Then 执行结果为"<Result>"
+    When 点击计算
+    Then 两数相加结果为"<Result>"
     Examples:
-      | Name | Opt | Type    | Value | Result |
-      | A/B  | Put | Int     | 10    | 成功     |
-      | C    | Put | String  | test  | 成功     |
-      | D    | Put | Boolean | false | 成功     |
+      | Number1 | Number2 | Result |
+      | 2       | 4       | 6      |
+      | 5       | 8       | 13     |
